@@ -35,7 +35,7 @@ export function findSwingHigh(candles, index) {
       if (findSwingHigh(candles, i)) {
         levels.push({
           type: "resistance",
-          price: candles[i].high.toFixed(2),
+          price: Number(candles[i].high.toFixed(2)),
           time: candles[i].time,
           confirmedAt: candles[i + 2].time,
         });
@@ -44,7 +44,7 @@ export function findSwingHigh(candles, index) {
       if (findSwingLow(candles, i)) {
         levels.push({
           type: "support",
-          price: candles[i].low.toFixed(2),
+          price: Number(candles[i].low.toFixed(2)),
           time: candles[i].time,
           confirmedAt: candles[i + 2].time,
         });
